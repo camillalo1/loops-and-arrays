@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-gangen</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //Model
+        let multipliedNumbers = "";
+        let counter = "";
+        let buttonDisabledWhenChecked = "";
+
+        //View
+        updateView();
+
+        function updateView(){
+            document.getElementById('app').innerHTML= /*HTML*/ `
+            <h3>2-gangen med for-løkke</h3>
+
+            <button ${buttonDisabledWhenChecked} onclick = "printNumbers()"> Vis 2-gangen </button><br/>
+            
+            <br><div>${multipliedNumbers}</div>
+            `;
+        }
+
+        //Controller
+
+        function printNumbers(){
+            let stopValue = 10;
+            for(let counter = 1; counter <= stopValue; counter++){
+                    multipliedNumbers += "<li>" + (counter*2) + "</li>";
+            buttonDisabledWhenChecked = "disabled";
+            }
+        updateView();
+        }
+
+    </script>
+</body>
+</html>
