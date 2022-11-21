@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell vokalene!</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //Model
+        let totalVowels = "";
+        let aCounter = "";
+        let eCounter = "";
+        let iCounter = "";
+        let oCounter = "";
+        let uCounter = "";
+        let yCounter = "";
+        let æCounter = "";
+        let øCounter = "";
+        let åCounter = "";
+        let inputString = "";
+        let infoTxt = "";
+        let letterTxt = "";
+        let inputTxt = "";
+        
+        //View
+
+        updateView();
+
+        function updateView(){
+            document.getElementById('app').innerHTML= /*HTML*/`
+            
+            <h1>Tell vokalene!</h1><br/>
+
+            Skriv en tekst og se hvor mange vokaler den inneholder.<br/>
+            <br><input type=text id="inputString" value="" /><br/>
+            <br><button onclick="countVowels()">Tell vokaler!</button>
+            <button onclick ="clearResult()"> Reset</button>
+            <br><div><b>${inputTxt}</b></div>
+            <br><div>${infoTxt}</div>
+            `;
+        }
+
+        //Controller
+
+        function countVowels(){
+            inputTxt = document.getElementById("inputString").value;
+            for (let i = 0; i < inputTxt.length; i++) {
+                if (inputTxt.charAt(i) == 'a') aCounter++
+                if (inputTxt.charAt(i) == 'e') eCounter++
+                if (inputTxt.charAt(i) == 'i') iCounter++
+                if (inputTxt.charAt(i) == 'o') oCounter++
+                if (inputTxt.charAt(i) == 'u') uCounter++
+                if (inputTxt.charAt(i) == 'y') yCounter++
+                if (inputTxt.charAt(i) == 'æ') æCounter++
+                if (inputTxt.charAt(i) == 'ø') øCounter++
+                if (inputTxt.charAt(i) == 'å') åCounter++;
+            }
+            totalVowels = aCounter +
+                        eCounter +
+                        iCounter +
+                        oCounter +
+                        uCounter +
+                        yCounter + 
+                        æCounter +
+                        øCounter + 
+                        åCounter;
+            
+            infoTxt = /*HTML*/ `
+            <p>Teksten inneholder <b> ${totalVowels} </b> vokal(er).</p><br/>
+            `;
+            if ('a') {infoTxt += letterTxt = /*HTML*/`Antall ganger "a" fremkommer i teksten:<b> ${aCounter} </b><br/>`;
+            }
+            if ('e') {infoTxt += letterTxt = /*HTML*/`Antall ganger "e" fremkommer i teksten:<b> ${eCounter} </b><br/>`;
+            }
+            if ('i') {infoTxt += letterTxt = /*HTML*/`Antall ganger "i" fremkommer i teksten:<b> ${iCounter} </b><br/>`;
+            }
+            if ('o') {infoTxt += letterTxt = /*HTML*/`Antall ganger "o" fremkommer i teksten:<b> ${oCounter} </b><br/>`;
+            }
+            if ('u') {infoTxt += letterTxt = /*HTML*/`Antall ganger "u" fremkommer i teksten:<b> ${uCounter} </b><br/>`;
+            }
+            if ('y') {infoTxt += letterTxt = /*HTML*/`Antall ganger "y" fremkommer i teksten:<b> ${yCounter} </b><br/>`;
+            }
+            if ('æ') {infoTxt += letterTxt = /*HTML*/`Antall ganger "æ" fremkommer i teksten:<b> ${æCounter} </b><br/>`;
+            }
+            if ('ø') {infoTxt += letterTxt = /*HTML*/`Antall ganger "ø" fremkommer i teksten:<b> ${øCounter} </b><br/>`;
+            }
+            if ('å') {infoTxt += letterTxt = /*HTML*/`Antall ganger "å" fremkommer i teksten:<b> ${åCounter} </b><br/>`;
+            }
+        updateView();
+        }
+        
+
+    </script>
+</body>
+</html>
