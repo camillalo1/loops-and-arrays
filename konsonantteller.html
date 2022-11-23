@@ -53,6 +53,10 @@
       }
 
       function countConsonants() {
+        let bhCounterstring = "";
+        let jqCounterstring = "";
+        let rzCounterstring = "";
+
         inputTxt = document.getElementById("inputString").value;
             for (let i = 0; i < inputTxt.length; i++){
           if (inputTxt.charAt(i) == 'b') bCounter++
@@ -76,26 +80,32 @@
           if (inputTxt.charAt(i) == 'x') xCounter++
           if (inputTxt.charAt(i) == 'z') zCounter++
         }
-        totalConsonants = bCounter +
-                        cCounter +
-                        dCounter +
-                        fCounter +
-                        gCounter +
-                        hCounter +
-                        jCounter +
-                        kCounter +
-                        lCounter +
-                        mCounter +
-                        nCounter +
-                        pCounter +
-                        qCounter +
-                        rCounter +
-                        sCounter +
-                        tCounter +
-                        vCounter +
-                        wCounter +
-                        xCounter +
-                        zCounter;
+        
+        bhCounterstring = bCounter + cCounter + dCounter + fCounter + gCounter + hCounter;
+        jqCounterstring = jCounter + kCounter + lCounter + mCounter + nCounter + pCounter + qCounter;
+        rzCounterstring = rCounter + sCounter + tCounter + vCounter + wCounter + xCounter + zCounter;
+        totalConsonants = bhCounterstring + jqCounterstring + rzCounterstring;
+        
+        // totalConsonants = bCounter +
+        //                 cCounter +
+        //                 dCounter +
+        //                 fCounter +
+        //                 gCounter +
+        //                 hCounter +
+        //                 jCounter +
+        //                 kCounter +
+        //                 lCounter +
+        //                 mCounter +
+        //                 nCounter +
+        //                 pCounter +
+        //                 qCounter +
+        //                 rCounter +
+        //                 sCounter +
+        //                 tCounter +
+        //                 vCounter +
+        //                 wCounter +
+        //                 xCounter +
+        //                 zCounter;
 
         infoTxt = /*HTML*/ `
          <p>Teksten inneholder <b>${totalConsonants}</b> konsonant(er).</p>
