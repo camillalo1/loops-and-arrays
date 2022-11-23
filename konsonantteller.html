@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konsonantteller</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      let totalConsonants = "";
+      let bCounter = "";
+      let cCounter = "";
+      let dCounter = "";
+      let fCounter = "";
+      let gCounter = "";
+      let hCounter = "";
+      let jCounter = "";
+      let kCounter = "";
+      let lCounter = "";
+      let mCounter = "";
+      let nCounter = "";
+      let pCounter = "";
+      let qCounter = "";
+      let rCounter = "";
+      let sCounter = "";
+      let tCounter = "";
+      let vCounter = "";
+      let wCounter = "";
+      let xCounter = "";
+      let zCounter = "";
+      let consonantCounter = "";
+      let inputString = "";
+      let inputTxt = "";
+      let infoTxt = "";
+      let buttonDisabledWhenChecked = "";
+
+      updateView();
+
+      function updateView() {
+        document.getElementById("app").innerHTML = /*HTML*/ `
+        
+        <h1>Tell konsonantene!</h1>
+        
+        Skriv en tekst og se hvor mange konsonanter den inneholder.<br/>
+            <br><input type=text id="inputString" value="" /><br/>
+            <br><button ${buttonDisabledWhenChecked} onclick="countConsonants()">Tell konsonanter!</button>
+            <button onclick ="clearResult()" value = "clear"> Reset</button><br/>
+            <br><div><b>${inputTxt}</b></div>
+            <br><div>${infoTxt}</div>
+        `;
+      }
+
+      function countConsonants() {
+        inputTxt = document.getElementById("inputString").value;
+            for (let i = 0; i < inputTxt.length; i++){
+          if (inputTxt.charAt(i) == 'b') bCounter++
+          if (inputTxt.charAt(i) == 'c') cCounter++
+          if (inputTxt.charAt(i) == 'd') dCounter++
+          if (inputTxt.charAt(i) == 'f') fCounter++
+          if (inputTxt.charAt(i) == 'g') gCounter++
+          if (inputTxt.charAt(i) == 'h') hCounter++
+          if (inputTxt.charAt(i) == 'j') jCounter++
+          if (inputTxt.charAt(i) == 'k') kCounter++
+          if (inputTxt.charAt(i) == 'l') lCounter++
+          if (inputTxt.charAt(i) == 'm') mCounter++
+          if (inputTxt.charAt(i) == 'n') nCounter++
+          if (inputTxt.charAt(i) == 'p') pCounter++
+          if (inputTxt.charAt(i) == 'q') qCounter++
+          if (inputTxt.charAt(i) == 'r') rCounter++
+          if (inputTxt.charAt(i) == 's') sCounter++
+          if (inputTxt.charAt(i) == 't') tCounter++
+          if (inputTxt.charAt(i) == 'v') vCounter++
+          if (inputTxt.charAt(i) == 'w') wCounter++
+          if (inputTxt.charAt(i) == 'x') xCounter++
+          if (inputTxt.charAt(i) == 'z') zCounter++
+        }
+        totalConsonants = bCounter +
+                        cCounter +
+                        dCounter +
+                        fCounter +
+                        gCounter +
+                        hCounter +
+                        jCounter +
+                        kCounter +
+                        lCounter +
+                        mCounter +
+                        nCounter +
+                        pCounter +
+                        qCounter +
+                        rCounter +
+                        sCounter +
+                        tCounter +
+                        vCounter +
+                        wCounter +
+                        xCounter +
+                        zCounter;
+
+        infoTxt = /*HTML*/ `
+         <p>Teksten inneholder <b>${totalConsonants}</b> konsonant(er).</p>
+         `;
+        if ('b') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "b" fremkommer i teksten:<b> ${bCounter} </b><br/>`;
+        }
+        if ('c') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "c" fremkommer i teksten:<b> ${cCounter} </b><br/>`;
+        }
+        if ('d') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "d" fremkommer i teksten:<b> ${dCounter} </b><br/>`;
+        }
+        if ('f') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "f" fremkommer i teksten:<b> ${fCounter} </b><br/>`;
+        }
+        if ('g') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "g" fremkommer i teksten:<b> ${gCounter} </b><br/>`;
+        }
+        if ('h') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "h" fremkommer i teksten:<b> ${hCounter} </b><br/>`;
+        }
+        if ('j') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "j" fremkommer i teksten:<b> ${jCounter} </b><br/>`;
+        }
+        if ('k') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "k" fremkommer i teksten:<b> ${kCounter} </b><br/>`;
+        }
+        if ('l') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "l" fremkommer i teksten:<b> ${lCounter} </b><br/>`;
+        }
+        if ('m') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "m" fremkommer i teksten:<b> ${mCounter} </b><br/>`;
+        }
+        if ('n') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "n" fremkommer i teksten:<b> ${nCounter} </b><br/>`;
+        }
+        if ('p') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "p" fremkommer i teksten:<b> ${pCounter} </b><br/>`;
+        }
+        if ('q') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "q" fremkommer i teksten:<b> ${qCounter} </b><br/>`;
+        }
+        if ('r') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "r" fremkommer i teksten:<b> ${rCounter} </b><br/>`;
+        }
+        if ('s') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "s" fremkommer i teksten:<b> ${sCounter} </b><br/>`;
+        }
+        if ('t') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "t" fremkommer i teksten:<b> ${tCounter} </b><br/>`;
+        }
+        if ('v') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "v" fremkommer i teksten:<b> ${vCounter} </b><br/>`;
+        }
+        if ('w') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "w" fremkommer i teksten:<b> ${wCounter} </b><br/>`;
+        }
+        if ('x') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "x" fremkommer i teksten:<b> ${xCounter} </b><br/>`;
+        }
+        if ('z') {
+          infoTxt +=
+            letterTxt = /*HTML*/ `Antall ganger "z" fremkommer i teksten:<b> ${zCounter} </b><br/>`;
+        }
+
+        buttonDisabledWhenChecked = "disabled";
+
+        updateView();
+      }
+    </script>
+  </body>
+</html>

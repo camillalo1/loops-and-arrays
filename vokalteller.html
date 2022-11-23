@@ -25,6 +25,9 @@
         let infoTxt = "";
         let letterTxt = "";
         let inputTxt = "";
+        let buttonDisabledWhenCHecked = "";
+        // let vowels = ["a","e","i","o","u","y","æ","ø","å",
+        //               "A","E","I","O","U","Y","Æ","Ø","Å"]
         
         //View
 
@@ -37,7 +40,7 @@
 
             Skriv en tekst og se hvor mange vokaler den inneholder.<br/>
             <br><input type=text id="inputString" value="" /><br/>
-            <br><button onclick="countVowels()">Tell vokaler!</button>
+            <br><button ${buttonDisabledWhenCHecked} onclick="countVowels()">Tell vokaler!</button>
             <button onclick ="clearResult()"> Reset</button>
             <br><div><b>${inputTxt}</b></div>
             <br><div>${infoTxt}</div>
@@ -46,6 +49,8 @@
 
         //Controller
 
+        
+        
         function countVowels(){
             inputTxt = document.getElementById("inputString").value;
             for (let i = 0; i < inputTxt.length; i++) {
@@ -57,7 +62,7 @@
                 if (inputTxt.charAt(i) == 'y') yCounter++
                 if (inputTxt.charAt(i) == 'æ') æCounter++
                 if (inputTxt.charAt(i) == 'ø') øCounter++
-                if (inputTxt.charAt(i) == 'å') åCounter++;
+                if (inputTxt.charAt(i) == 'å') åCounter++
             }
             totalVowels = aCounter +
                         eCounter +
@@ -90,8 +95,20 @@
             }
             if ('å') {infoTxt += letterTxt = /*HTML*/`Antall ganger "å" fremkommer i teksten:<b> ${åCounter} </b><br/>`;
             }
+        
+        buttonDisabledWhenCHecked = "disabled";
         updateView();
         }
+
+        function deleteVowels(){
+            vowels = 
+            vowels.splice[0,18];
+            updateView();
+        }
+
+        // function clearResult(){
+        //     inputString.value = "";
+        // }
         
 
     </script>
